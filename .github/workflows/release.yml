@@ -21,7 +21,7 @@ jobs:
       - name: Run JReleaser
         uses: jreleaser/jreleaser-action@v2
         with:
-          args: full-release
+          arguments: full-release  # <-- changed from args to arguments
         env:
           JRELEASER_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           JRELEASER_GPG_PUBLIC_KEY: ${{ secrets.GPG_PUBLIC_KEY }}
