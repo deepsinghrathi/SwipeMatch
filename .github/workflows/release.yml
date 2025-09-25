@@ -18,10 +18,10 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Install JReleaser
-        run: curl https://jreleaser.org/setup.sh -sSfL | sh
-
       - name: Run JReleaser
+        uses: jreleaser/jreleaser-action@v2
+        with:
+          args: full-release
         env:
           JRELEASER_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           JRELEASER_GPG_PUBLIC_KEY: ${{ secrets.GPG_PUBLIC_KEY }}
@@ -29,4 +29,3 @@ jobs:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
           JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: jreleaser full-release
