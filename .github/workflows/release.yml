@@ -19,7 +19,7 @@ jobs:
           java-version: 17
 
       - name: Install JReleaser
-        run: curl -sL https://git.io/jreleaser | bash
+        run: curl https://jreleaser.org/setup.sh -sSfL | sh
 
       - name: Run JReleaser
         env:
