@@ -1,0 +1,23 @@
+project:
+  name: swipematch
+  version: 1.0.0                  # update this for new releases
+  description: "Tinder-style swipeable card library for Android Compose"
+  license: MIT
+  authors:
+    - Deep Singh Rathi
+  links:
+    homepage: https://github.com/deepsinghrathi/swipematch
+    scm: https://github.com/deepsinghrathi/swipematch.git
+
+signing:
+  active: ALWAYS
+  armored: true
+
+deploy:
+  maven:
+    central:
+      sonatype:
+        active: ALWAYS
+        token:
+          username: env:OSSRH_USERNAME
+          password: env:OSSRH_PASSWORD
